@@ -21,7 +21,7 @@ support.html
 
 See:
 
-privacy-policy.html
+privacy-policy
 
 ## Disclaimer
 
