@@ -1,4 +1,4 @@
-# Privacy Policy for Ahara Mother Extension
+Privacy Policy for Ahara Mother Extension
 
 Effective date: 30/06/2026
 
@@ -11,19 +11,20 @@ This extension is not produced by, endorsed by, sponsored by, or affiliated with
 The extension may store information entered by the user, including:
 
 - Mobile number
+- Shop name
 - Shortcut key
 - User type
 - RC number
 - Active profile selection
 - Automation state and speed/status preferences
 - Local automation logs for troubleshooting
-- Local license cache and device identifier
+- Local license cache, license expiry date, and device identifier
 
 The extension may read or update form fields and page controls on `ahara.karnataka.gov.in` only to provide the workflow assistance described in the Chrome Web Store listing.
 
 The extension reads local BIO/IRIS device status from a helper or RD service running on the user's own computer. This may include endpoints such as `http://localhost:3499/device` and local RD service ports on `localhost` or `127.0.0.1`. The local device information may include selected device mode, such as BIO or IRIS, and a local device identifier.
 
-The extension contacts a license-status endpoint hosted through Google Apps Script, including `script.google.com` or `script.googleusercontent.com`, to validate whether the local device is allowed to use the extension. The local device identifier may be used for this license validation.
+The extension contacts a license-status endpoint hosted through Google Apps Script, including `script.google.com` or `script.googleusercontent.com`, to validate whether the local device is allowed to use the extension. The local device identifier may be used for this license validation, and the returned license expiry date may be shown to the user.
 
 ## How Information Is Used
 
