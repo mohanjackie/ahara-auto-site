@@ -1,12 +1,12 @@
-# Privacy Policy Draft For Ahara Portal Helper
+# Privacy Policy for Ahara Mother Extension
 
 Effective date: 30/06/2026
 
-Ahara Portal Helper is an unofficial browser extension for authorized Ahara portal operators. It assists with saved profiles, login workflow, BIO/IRIS device-mode selection, and issue workflow steps on `ahara.karnataka.gov.in`.
+Ahara Mother Extension is an unofficial browser extension for authorized Ahara portal operators. It assists with saved profiles, login workflow, BIO/IRIS device-mode selection, and issue workflow steps on `ahara.karnataka.gov.in`.
 
-This extension is not produced by, endorsed by, or affiliated with the Government of Karnataka or the official Ahara portal.
+This extension is not produced by, endorsed by, sponsored by, or affiliated with the Government of Karnataka or the official Ahara portal.
 
-## Information The Extension Handles
+## Information the Extension Handles
 
 The extension may store information entered by the user, including:
 
@@ -16,13 +16,14 @@ The extension may store information entered by the user, including:
 - RC number
 - Active profile selection
 - Automation state and speed/status preferences
+- Local automation logs for troubleshooting
 - Local license cache and device identifier
 
 The extension may read or update form fields and page controls on `ahara.karnataka.gov.in` only to provide the workflow assistance described in the Chrome Web Store listing.
 
-The extension reads local device status from `http://localhost:3499/device`, including selected device mode such as BIO or IRIS and a local device identifier.
+The extension reads local BIO/IRIS device status from a helper or RD service running on the user's own computer. This may include endpoints such as `http://localhost:3499/device` and local RD service ports on `localhost` or `127.0.0.1`. The local device information may include selected device mode, such as BIO or IRIS, and a local device identifier.
 
-The extension contacts a license-status endpoint hosted on `script.googleusercontent.com` to validate whether the local device is allowed to use the extension.
+The extension contacts a license-status endpoint hosted through Google Apps Script, including `script.google.com` or `script.googleusercontent.com`, to validate whether the local device is allowed to use the extension. The local device identifier may be used for this license validation.
 
 ## How Information Is Used
 
@@ -34,25 +35,41 @@ The extension does not use user data for advertising.
 
 The extension does not transfer user data to data brokers or advertising platforms.
 
+The extension does not use user data to determine creditworthiness or for lending purposes.
+
 ## Data Storage
 
 Profile and automation data are stored using browser extension storage. Some profile data may use Chrome sync storage, which can sync through the user's Google account if browser sync is enabled.
 
 Local automation logs may be stored in browser local storage for troubleshooting.
 
+License validation results may be cached locally for a limited time to reduce repeated license checks and improve reliability.
+
 ## Data Sharing
 
 The extension communicates with:
 
-- The Ahara portal, as part of the user's normal authorized portal workflow.
-- The local helper service at `http://localhost:3499/device`.
-- The license-status endpoint at `script.googleusercontent.com`.
+- The Ahara portal at `ahara.karnataka.gov.in`, as part of the user's normal authorized portal workflow.
+- The local helper or RD service running on the user's computer through `localhost` or `127.0.0.1`.
+- The license-status endpoint hosted through Google Apps Script.
 
-No data is shared for advertising or resale.
+No data is shared for advertising, resale, or unrelated third-party marketing.
+
+## Permissions
+
+The extension requests `storage` to save user profiles, selected profile state, automation state, device/license cache, and related settings.
+
+The extension requests `activeTab` and `scripting` to allow the user to start or reset the described workflow assistance on the active Ahara portal tab.
+
+The extension requests access to `https://ahara.karnataka.gov.in/*` to assist with user-authorized portal workflows.
+
+The extension requests localhost access, such as `http://localhost/*` and `http://127.0.0.1/*`, only to communicate with the local helper or RD service running on the user's own computer for BIO/IRIS device detection.
 
 ## Security
 
-The extension requests only the permissions needed for its described functionality. Users should install and use the extension only on devices where they are authorized to access the Ahara portal and the local helper service.
+The extension requests only the permissions needed for its described functionality. Users should install and use the extension only on devices where they are authorized to access the Ahara portal and the local helper or RD service.
+
+Users are responsible for ensuring they have permission to use the Ahara portal and any connected BIO/IRIS device or local RD service.
 
 ## Contact
 
